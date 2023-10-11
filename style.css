@@ -1,7 +1,25 @@
+/* .board {
+  flex-wrap: wrap;
+} */
+
+
+
+
+
 .inside {
-  width: 50px;
-  height: 50px;
-  border: 1px solid black;
+  /* width: 50px;
+  height: 50px; */
+  /* border: 1px solid black; */
   background-color: rgb(21, 255, 0);
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* flex-grow: 0; */
+  /* flex-shrink: 0; */
+}
+
+.column {
+  flex: 1;
+  background-color: wheat;
+  border: 1px solid black;
 }
