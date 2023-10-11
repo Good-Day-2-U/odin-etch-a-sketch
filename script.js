@@ -37,29 +37,56 @@ for (let i = 0; i < gridInput; i ++){
     newDivColumn.classList.add("column")
     newDivColumn.classList.add("drawn")
 
-    newDivColumn.addEventListener('mouseover', draw);
+    // newDivColumn.addEventListener('mouseover', draw);
+    newDivColumn.addEventListener('mouseover', isHovered);
   }
   // return newDivColumn
 }
 
 
-// newDivColumn.addEventListener('click', function handleClick() {
-//   console.log('element clicked');
-// });
 
 let drawElement = document.querySelector(".column")
 
-// newDivColumn.addEventListener('mouseover', function draw() {
-//   drawElement.classList.replace("column", "drawn")
-//   console.log('changed')
-// }
 
-function draw(event) {
-  const column = event.target;
-  column.classList.remove("column");
-  console.log('changed');
-  console.log(event.target);
+
+function isHovered(event) {
+  let elementHovered = event.target
+  elementHovered.addEventListener('onkeydown', draw);
+
+
+  let mouseDown = false;
+
+  window.onmousedown = () => {
+    mouseDown = true;
+    if (mouseDown == true) {
+      console.log(mouseDown)
+    }
+  }
+  window.onmouseup = () => {
+    mouseDown = false;
+    if (mouseDown == false) {
+      console.log(mouseDown)
+    }
+  }
+
+
+  function draw(event) {
+    const column = event.target;
+    if (mouseDown == true){
+      
+      column.classList.remove("column");
+
+    }
+  }
 }
+
+
+// function draw(event) {
+//   const column = event.target;
+//   column.classList.remove("column");
+//   // console.log('changed');
+//   // console.log(event.target);
+// }
 
 
 
