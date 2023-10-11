@@ -1,22 +1,20 @@
-let body = document.querySelector("body")
+let body = document.querySelector("body");
 
 
-let newDiv = document.createElement("div")
+let newDiv = document.createElement("div");
 
 
 let newDivInside;
 let newDivColumn;
 
-let gridInput = 42
 
-
-// let gridSquareHeight = 800/gridInput;
-// let gridSquareWidth = 800/gridInput;
+let gridInput = 42;
 
 
 
-body.appendChild(newDiv)
-newDiv.classList.add("board")
+
+body.appendChild(newDiv);
+newDiv.classList.add("board");
 
 
 
@@ -37,64 +35,29 @@ for (let i = 0; i < gridInput; i ++){
     newDivColumn.classList.add("column")
     newDivColumn.classList.add("drawn")
 
-    // newDivColumn.addEventListener('mouseover', draw);
-    newDivColumn.addEventListener('mouseover', isHovered);
+    newDivColumn.addEventListener('mouseover', draw);
   }
-  // return newDivColumn
-}
-
+};
 
 
 let drawElement = document.querySelector(".column")
 
-
-
-function isHovered(event) {
-  let elementHovered = event.target
-  elementHovered.addEventListener('onkeydown', draw);
-
-
-  let mouseDown = false;
-
-  window.onmousedown = () => {
-    mouseDown = true;
-    if (mouseDown == true) {
-      console.log(mouseDown)
-    }
-  }
-  window.onmouseup = () => {
-    mouseDown = false;
-    if (mouseDown == false) {
-      console.log(mouseDown)
-    }
-  }
-
-
-  function draw(event) {
-    const column = event.target;
-    if (mouseDown == true){
-      
-      column.classList.remove("column");
-
-    }
-  }
-}
-
-
-// function draw(event) {
-//   const column = event.target;
-//   column.classList.remove("column");
-//   // console.log('changed');
-//   // console.log(event.target);
-// }
+function draw(event) {
+  const column = event.target;
+  column.classList.remove("column");
+  console.log('changed');
+  console.log(event.target);
+};
 
 
 
 
-let gridSquares = document.querySelector(".inside")
+// let gridSquares = document.querySelector(".inside");
 
+
+
+// JS styles
 
 newDiv.style = "border: 1px solid red; height: 800px; width: 800px; background-color: orange; Display: Flex"
-
 
 
