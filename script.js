@@ -19,21 +19,15 @@ let boardSize;
 
 function sizeClicked() {
   let boardSize = prompt("Please enter a board size!")
-  gridInput = boardSize
-  mkBoard()
+  
+  if (boardSize >= 1 && boardSize <= 100 ) {
+    gridInput = boardSize
+    mkBoard()
+  }  
 }
 
 
 let gridInput;
-
-
-if (boardSize >= 1 || boardSize <= 100 ) {
-  let temp = boardSize;
-  gridInput = temp
-}
-
-
-
 
 
 let mkBoard = function makeGameBoard() {
