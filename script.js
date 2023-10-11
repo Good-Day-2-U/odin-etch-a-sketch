@@ -2,10 +2,12 @@ let body = document.querySelector("body")
 
 
 let newDiv = document.createElement("div")
+
+
 let newDivInside;
 let newDivColumn;
 
-let gridInput = 32
+let gridInput = 42
 
 
 // let gridSquareHeight = 800/gridInput;
@@ -33,10 +35,32 @@ for (let i = 0; i < gridInput; i ++){
     
     newDivInside.appendChild(newDivColumn)
     newDivColumn.classList.add("column")
-  
-  }
+    newDivColumn.classList.add("drawn")
 
+    newDivColumn.addEventListener('mouseover', draw);
+  }
+  // return newDivColumn
 }
+
+
+// newDivColumn.addEventListener('click', function handleClick() {
+//   console.log('element clicked');
+// });
+
+let drawElement = document.querySelector(".column")
+
+// newDivColumn.addEventListener('mouseover', function draw() {
+//   drawElement.classList.replace("column", "drawn")
+//   console.log('changed')
+// }
+
+function draw(event) {
+  const column = event.target;
+  column.classList.remove("column");
+  console.log('changed');
+  console.log(event.target);
+}
+
 
 
 

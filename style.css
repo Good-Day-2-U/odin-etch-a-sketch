@@ -18,8 +18,18 @@
   /* flex-shrink: 0; */
 }
 
+.drawn {
+  flex: 1;
+  background-color: black;
+  border: 1px solid black;
+}
+
 .column {
   flex: 1;
   background-color: wheat;
   border: 1px solid black;
+}
+
+.column:hover {
+  background-color: black;
 }
