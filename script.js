@@ -38,7 +38,8 @@ if (boardSize >= 1 || boardSize <= 100 ) {
 
 let mkBoard = function makeGameBoard() {
 
-  // newDivColumn.remove()
+  let parentBoard = document.querySelector(".board")
+  parentBoard.innerHTML = ''
 
   for (let i = 0; i < gridInput; i ++){
     
